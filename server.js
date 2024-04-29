@@ -1,10 +1,10 @@
 const express = require("express");
-const { connectDB } = require("./dbconnection");
+const { connectDB, connectDatabase } = require("./dbconnection");
 const cardRouter = require("./routers/routers");
 const app = express();
 const port = process.env.PORT || 3000;
 // Connect to Mongodb
-connectDB()
+connectDatabase()
   .then(() => {
     
     app.use(express.static(__dirname + '/public'));
